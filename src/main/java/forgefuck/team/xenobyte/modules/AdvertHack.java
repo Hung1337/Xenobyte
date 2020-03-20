@@ -16,40 +16,44 @@ import forgefuck.team.xenobyte.gui.swing.UserInput;
 import forgefuck.team.xenobyte.utils.Rand;
 
 public class AdvertHack extends CheatModule {
-    
-    @Cfg("urls") private List<String> urls;
-    
-    public AdvertHack() {
-        super("AdvertHack", Category.MODS, PerformMode.SINGLE);
-        urls = new ArrayList<String>();
-        urls.add("");
-    }
-    
-    @Override public void onPerform(PerformSource src) {
-        String url = urls.get(0);
-        if (!url.isEmpty()) {
-            for (int id = 0; id <= 100; id++) {
-                utils.sendPacket("malisisadvert", (byte) 7, id, Rand.str(), url);
-            }
-        }
-    }
-    
-    @Override public boolean isWorking() {
-        return Loader.isModLoaded("malisisadvert");
-    }
-    
-    @Override public String moduleDesc() {
-        return "Замена всех рекламных картинок в MalisisAdvert на картинку из ссылки";
-    }
-    
-    @Override public Panel settingPanel() {
-        return new Panel(
-            new Button("AdvertUrl") {
-                @Override public void onLeftClick() {
-                    new UserInput("Ссылки", urls, InputType.SINGLE_STRING).showFrame();
-                }
-            }
-        );
-    }
+
+	@Cfg("urls")
+	private List<String> urls;
+
+	public AdvertHack() {
+		super("AdvertHack", Category.MODS, PerformMode.SINGLE);
+		urls = new ArrayList<String>();
+		urls.add("");
+	}
+
+	@Override
+	public void onPerform(PerformSource src) {
+		String url = urls.get(0);
+		if (!url.isEmpty()) {
+			for (int id = 0; id <= 100; id++) {
+				utils.sendPacket("malisisadvert", (byte) 7, id, Rand.str(), url);
+			}
+		}
+	}
+
+	@Override
+	public boolean isWorking() {
+		return Loader.isModLoaded("malisisadvert");
+	}
+
+	@Override
+	public String moduleDesc() {
+		return "Замена всех рекламных картинок в MalisisAdvert на картинку из ссылки";
+	}
+
+	@Override
+	public Panel settingPanel() {
+		return new Panel(new Button("AdvertUrl") {
+			@Override
+			public void onLeftClick() {
+				new UserInput("Ссылки", urls, InputType.SINGLE_STRING).showFrame();
+			}
+		});
+	}
 
 }

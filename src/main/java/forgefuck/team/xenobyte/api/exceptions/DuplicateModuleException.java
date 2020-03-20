@@ -3,9 +3,9 @@ package forgefuck.team.xenobyte.api.exceptions;
 import forgefuck.team.xenobyte.api.module.CheatModule;
 
 public class DuplicateModuleException extends RuntimeException {
-    
-    public DuplicateModuleException(CheatModule module) {
-        super("найден повторяющийся модуль [" + module + "]");
-    }
+
+	public DuplicateModuleException(CheatModule module) {
+		super("найден повторяющийся модуль [" + module + "]");
+	}
 
 }

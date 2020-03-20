@@ -9,17 +9,20 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 
 public class AdvancedTooltip extends CheatModule {
-    
-    public AdvancedTooltip() {
-        super("AdvancedTooltip", Category.MISC, PerformMode.TOGGLE);
-    }
-    
-    @SubscribeEvent public void tooltipHook(ItemTooltipEvent e) {
-        e.toolTip.add(utils.stringId(e.itemStack) + " " + Item.getIdFromItem(e.itemStack.getItem()) + ":" + e.itemStack.getItemDamage());
-    }
-    
-    @Override public String moduleDesc() {
-        return "Отображает в описании предмета его метаданные";
-    }
+
+	public AdvancedTooltip() {
+		super("AdvancedTooltip", Category.MISC, PerformMode.TOGGLE);
+	}
+
+	@SubscribeEvent
+	public void tooltipHook(ItemTooltipEvent e) {
+		e.toolTip.add(utils.stringId(e.itemStack) + " " + Item.getIdFromItem(e.itemStack.getItem()) + ":"
+				+ e.itemStack.getItemDamage());
+	}
+
+	@Override
+	public String moduleDesc() {
+		return "Отображает в описании предмета его метаданные";
+	}
 
 }

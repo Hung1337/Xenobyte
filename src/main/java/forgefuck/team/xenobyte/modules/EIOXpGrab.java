@@ -9,28 +9,32 @@ import net.minecraft.tileentity.TileEntity;
 
 public class EIOXpGrab extends CheatModule {
 
-    public EIOXpGrab() {
-        super("EIOXpGrab", Category.MODS, PerformMode.SINGLE);
-    }
-    
-    private void sendGrab(TileEntity tile) {
-        try {
-            if (Class.forName("crazypants.enderio.machine.obelisk.xp.TileExperienceObelisk").isInstance(tile)) {
-                utils.sendPacket("enderio", (byte) 69, utils.coords(tile), Short.MAX_VALUE);
-            }
-        } catch(Exception e) {}
-    }
-    
-    @Override public void onPerform(PerformSource src) {
-        utils.nearTiles().forEach(this::sendGrab);
-    }
-    
-    @Override public boolean isWorking() {
-        return Loader.isModLoaded("EnderIO");
-    }
-    
-    @Override public String moduleDesc() {
-        return "Высасывает опыт из всех обелисков опыта в радиусе";
-    }
+	public EIOXpGrab() {
+		super("EIOXpGrab", Category.MODS, PerformMode.SINGLE);
+	}
+
+	private void sendGrab(TileEntity tile) {
+		try {
+			if (Class.forName("crazypants.enderio.machine.obelisk.xp.TileExperienceObelisk").isInstance(tile)) {
+				utils.sendPacket("enderio", (byte) 69, utils.coords(tile), Short.MAX_VALUE);
+			}
+		} catch (Exception e) {
+		}
+	}
+
+	@Override
+	public void onPerform(PerformSource src) {
+		utils.nearTiles().forEach(this::sendGrab);
+	}
+
+	@Override
+	public boolean isWorking() {
+		return Loader.isModLoaded("EnderIO");
+	}
+
+	@Override
+	public String moduleDesc() {
+		return "Высасывает опыт из всех обелисков опыта в радиусе";
+	}
 
 }
