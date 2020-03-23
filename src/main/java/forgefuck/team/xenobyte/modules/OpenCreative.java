@@ -1,20 +1,13 @@
 package forgefuck.team.xenobyte.modules;
 
-import java.io.Closeable;
-import java.io.DataOutput;
-import java.io.DataOutputStream;
-import java.io.OutputStream;
-import java.util.zip.GZIPOutputStream;
-
 import com.google.common.io.Closer;
-
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.network.internal.FMLProxyPacket;
 import forgefuck.team.xenobyte.api.config.Cfg;
-import forgefuck.team.xenobyte.api.module.PerformMode;
-import forgefuck.team.xenobyte.api.module.PerformSource;
 import forgefuck.team.xenobyte.api.module.Category;
 import forgefuck.team.xenobyte.api.module.CheatModule;
+import forgefuck.team.xenobyte.api.module.PerformMode;
+import forgefuck.team.xenobyte.api.module.PerformSource;
 import forgefuck.team.xenobyte.gui.click.elements.Button;
 import forgefuck.team.xenobyte.gui.click.elements.Panel;
 import io.netty.buffer.ByteBuf;
@@ -22,6 +15,12 @@ import io.netty.buffer.ByteBufOutputStream;
 import io.netty.buffer.Unpooled;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+
+import java.io.Closeable;
+import java.io.DataOutput;
+import java.io.DataOutputStream;
+import java.io.OutputStream;
+import java.util.zip.GZIPOutputStream;
 
 public class OpenCreative extends CheatModule {
 

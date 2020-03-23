@@ -1,12 +1,11 @@
 package forgefuck.team.xenobyte.modules;
 
-import org.lwjgl.input.Keyboard;
-
-import forgefuck.team.xenobyte.api.module.PerformMode;
-import forgefuck.team.xenobyte.api.module.PerformSource;
 import forgefuck.team.xenobyte.api.module.Category;
 import forgefuck.team.xenobyte.api.module.CheatModule;
+import forgefuck.team.xenobyte.api.module.PerformMode;
+import forgefuck.team.xenobyte.api.module.PerformSource;
 import forgefuck.team.xenobyte.gui.click.XenoGuiScreen;
+import org.lwjgl.input.Keyboard;
 
 public class XenoGui extends CheatModule {
 

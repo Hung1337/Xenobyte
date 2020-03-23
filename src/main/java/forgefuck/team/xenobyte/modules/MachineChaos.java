@@ -33,7 +33,7 @@ public class MachineChaos extends CheatModule {
 							.invoke(tile, enumTypeClass.getMethod("getBaseType").invoke(type))) {
 						for (int side = 0; side <= 5; side++) {
 							short typeId = ((Integer) enumTypeClass.getMethod("ordinal").invoke(type)).shortValue();
-							utils.sendPacket("enderio", (byte) 76, utils.coords(tile), (short) typeId, (short) side,
+							utils.sendPacket("enderio", (byte) 76, utils.coords(tile), typeId, (short) side,
 									(short) Rand.num(4));
 						}
 					}

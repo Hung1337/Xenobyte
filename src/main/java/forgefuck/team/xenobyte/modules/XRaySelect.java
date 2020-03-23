@@ -1,16 +1,5 @@
 package forgefuck.team.xenobyte.modules;
 
-import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.util.ArrayList;
-import java.util.IdentityHashMap;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
-
-import javax.swing.JSlider;
-
 import forgefuck.team.xenobyte.api.config.Cfg;
 import forgefuck.team.xenobyte.api.gui.ColorPicker;
 import forgefuck.team.xenobyte.api.integration.NEI;
@@ -25,13 +14,7 @@ import forgefuck.team.xenobyte.render.Colors;
 import forgefuck.team.xenobyte.render.XRayHintRender;
 import forgefuck.team.xenobyte.utils.Config;
 import forgefuck.team.xenobyte.utils.Reflections;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockAir;
-import net.minecraft.block.BlockDispenser;
-import net.minecraft.block.BlockDropper;
-import net.minecraft.block.BlockLever;
-import net.minecraft.block.BlockMobSpawner;
-import net.minecraft.block.BlockTorch;
+import net.minecraft.block.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -40,14 +23,24 @@ import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.common.util.RotationHelper;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.IdentityHashMap;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
 public class XRaySelect extends CheatModule {
 
-	@Cfg("configBlocks")
-	private List<String> configBlocks;
 	@Cfg("guiHint")
 	public boolean guiHint;
-	private List<String> missingBlocks;
 	public List<SelectedBlock> blocks;
+	@Cfg("configBlocks")
+	private List<String> configBlocks;
+	private List<String> missingBlocks;
 	private String neiSubset;
 
 	public XRaySelect() {
@@ -109,24 +102,24 @@ public class XRaySelect extends CheatModule {
 	@Override
 	public void onPerform(PerformSource src) {
 		switch (src) {
-		case BUTTON:
-			NEI.openGui("@" + neiSubset);
-			break;
-		case KEY:
-			ItemStack stack = NEI.getStackMouseOver();
-			if (stack != null) {
-				if (stack.getItem() instanceof ItemBlock) {
-					SelectedBlock block = getBlock(stack);
-					if (block == null) {
-						block = new SelectedBlock(stack, Colors.BLACK, 1);
+			case BUTTON:
+				NEI.openGui("@" + neiSubset);
+				break;
+			case KEY:
+				ItemStack stack = NEI.getStackMouseOver();
+				if (stack != null) {
+					if (stack.getItem() instanceof ItemBlock) {
+						SelectedBlock block = getBlock(stack);
+						if (block == null) {
+							block = new SelectedBlock(stack, Colors.BLACK, 1);
+						}
+						new XRaySettings(block).showFrame();
 					}
-					new XRaySettings(block).showFrame();
+				} else {
+					if (utils.isInGameGui()) {
+						NEI.openGui("@" + neiSubset);
+					}
 				}
-			} else {
-				if (utils.isInGameGui()) {
-					NEI.openGui("@" + neiSubset);
-				}
-			}
 		}
 	}
 
@@ -207,10 +200,10 @@ public class XRaySelect extends CheatModule {
 	public class SelectedBlock extends ColorPicker {
 
 		final ItemStack itemBlock;
-		public float scale;
 		final Block block;
 		final String id;
 		final int meta;
+		public float scale;
 
 		SelectedBlock(ItemStack itemBlock, int color, float scale) {
 			super(color);

@@ -5,24 +5,23 @@ import forgefuck.team.xenobyte.api.module.Category;
 import forgefuck.team.xenobyte.api.module.CheatModule;
 import forgefuck.team.xenobyte.api.module.PerformMode;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 
 public class AdvancedTooltip extends CheatModule {
 
-	public AdvancedTooltip() {
-		super("AdvancedTooltip", Category.MISC, PerformMode.TOGGLE);
-	}
+    public AdvancedTooltip() {
+        super("AdvancedTooltip", Category.MISC, PerformMode.TOGGLE);
+    }
 
-	@SubscribeEvent
-	public void tooltipHook(ItemTooltipEvent e) {
-		e.toolTip.add(utils.stringId(e.itemStack) + " " + Item.getIdFromItem(e.itemStack.getItem()) + ":"
-				+ e.itemStack.getItemDamage());
-	}
+    @SubscribeEvent
+    public void tooltipHook(ItemTooltipEvent e) {
+        e.toolTip.add(utils.stringId(e.itemStack) + " " + Item.getIdFromItem(e.itemStack.getItem()) + ":"
+                + e.itemStack.getItemDamage());
+    }
 
-	@Override
-	public String moduleDesc() {
-		return "Отображает в описании предмета его метаданные";
-	}
+    @Override
+    public String moduleDesc() {
+        return "Отображает в описании предмета его метаданные";
+    }
 
 }

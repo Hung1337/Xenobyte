@@ -1,11 +1,6 @@
 package forgefuck.team.xenobyte.modules;
 
-import java.net.InetAddress;
-import java.util.ArrayList;
-import java.util.List;
-
 import com.google.gson.JsonObject;
-
 import forgefuck.team.xenobyte.api.config.Cfg;
 import forgefuck.team.xenobyte.api.gui.WidgetMessage;
 import forgefuck.team.xenobyte.api.gui.WidgetMode;
@@ -15,7 +10,6 @@ import forgefuck.team.xenobyte.api.module.PerformMode;
 import forgefuck.team.xenobyte.gui.click.elements.Button;
 import forgefuck.team.xenobyte.gui.click.elements.Panel;
 import forgefuck.team.xenobyte.utils.NetUtils;
-import io.netty.util.concurrent.GenericFutureListener;
 import net.minecraft.client.multiplayer.ServerAddress;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.network.EnumConnectionState;
@@ -27,6 +21,10 @@ import net.minecraft.network.status.client.C00PacketServerQuery;
 import net.minecraft.network.status.server.S00PacketServerInfo;
 import net.minecraft.network.status.server.S01PacketPong;
 import net.minecraft.util.IChatComponent;
+
+import java.net.InetAddress;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CheckVanish extends CheatModule {
 
@@ -80,9 +78,9 @@ public class CheckVanish extends CheatModule {
 					addr.getPort());
 			manager.setNetHandler(simpleHandler);
 			manager.scheduleOutboundPacket(
-					new C00Handshake(5, addr.getIP(), addr.getPort(), EnumConnectionState.STATUS),
-					new GenericFutureListener[0]);
-			manager.scheduleOutboundPacket(new C00PacketServerQuery(), new GenericFutureListener[0]);
+					new C00Handshake(5, addr.getIP(), addr.getPort(), EnumConnectionState.STATUS)
+			);
+			manager.scheduleOutboundPacket(new C00PacketServerQuery());
 		} catch (Exception ex) {
 		}
 	}

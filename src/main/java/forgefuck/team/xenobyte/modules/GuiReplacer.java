@@ -12,33 +12,33 @@ import net.minecraftforge.client.event.GuiOpenEvent;
 
 public class GuiReplacer extends CheatModule {
 
-	public GuiReplacer() {
-		super("GuiReplacer", Category.NONE, PerformMode.ON_START);
-	}
+    public GuiReplacer() {
+        super("GuiReplacer", Category.NONE, PerformMode.ON_START);
+    }
 
-	private void replaceSplash(GuiScreen gui) {
-		if (gui instanceof GuiMainMenu) {
-			try {
-				Reflections.setPrivateValue(GuiMainMenu.class, (GuiMainMenu) gui, Rand.splash(), 3);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
+    private void replaceSplash(GuiScreen gui) {
+        if (gui instanceof GuiMainMenu) {
+            try {
+                Reflections.setPrivateValue(GuiMainMenu.class, (GuiMainMenu) gui, Rand.splash(), 3);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
-	@Override
-	public void onPostInit() {
-		replaceSplash(utils.currentScreen());
-	}
+    @Override
+    public void onPostInit() {
+        replaceSplash(utils.currentScreen());
+    }
 
-	@Override
-	public boolean provideStateEvents() {
-		return false;
-	}
+    @Override
+    public boolean provideStateEvents() {
+        return false;
+    }
 
-	@SubscribeEvent
-	public void guiOpen(GuiOpenEvent e) {
-		replaceSplash(e.gui);
-	}
+    @SubscribeEvent
+    public void guiOpen(GuiOpenEvent e) {
+        replaceSplash(e.gui);
+    }
 
 }

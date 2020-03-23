@@ -1,9 +1,5 @@
 package forgefuck.team.xenobyte.modules;
 
-import java.awt.Color;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import forgefuck.team.xenobyte.api.config.Cfg;
 import forgefuck.team.xenobyte.api.gui.ColorPicker;
@@ -16,6 +12,10 @@ import forgefuck.team.xenobyte.gui.swing.ColorPickerGui;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
+
+import java.awt.*;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class WayLine extends CheatModule {
 
@@ -50,8 +50,8 @@ public class WayLine extends CheatModule {
 		if (inGame) {
 			EntityPlayer pl = utils.player();
 			if (!pl.isDead && !pl.isPlayerSleeping() && !utils.isAfk(pl)) {
-				poses.add(new double[] { RenderManager.renderPosX, RenderManager.renderPosY - pl.height,
-						RenderManager.renderPosZ });
+				poses.add(new double[]{RenderManager.renderPosX, RenderManager.renderPosY - pl.height,
+						RenderManager.renderPosZ});
 			}
 		}
 	}

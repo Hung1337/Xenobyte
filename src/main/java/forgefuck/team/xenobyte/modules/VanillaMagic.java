@@ -1,9 +1,5 @@
 package forgefuck.team.xenobyte.modules;
 
-import java.util.stream.Stream;
-
-import org.lwjgl.input.Mouse;
-
 import forgefuck.team.xenobyte.api.module.Category;
 import forgefuck.team.xenobyte.api.module.CheatModule;
 import forgefuck.team.xenobyte.api.module.PerformMode;
@@ -13,11 +9,14 @@ import net.minecraft.item.ItemPotion;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.C03PacketPlayer;
 import net.minecraft.potion.Potion;
+import org.lwjgl.input.Mouse;
+
+import java.util.stream.Stream;
 
 public class VanillaMagic extends CheatModule {
 
-	private final Potion[] badEffects = new Potion[] { Potion.moveSlowdown, Potion.digSlowdown, Potion.blindness,
-			Potion.confusion, Potion.weakness, Potion.hunger, Potion.poison, Potion.wither, };
+	private final Potion[] badEffects = new Potion[]{Potion.moveSlowdown, Potion.digSlowdown, Potion.blindness,
+			Potion.confusion, Potion.weakness, Potion.hunger, Potion.poison, Potion.wither,};
 
 	public VanillaMagic() {
 		super("VanillaMagic", Category.PLAYER, PerformMode.TOGGLE);

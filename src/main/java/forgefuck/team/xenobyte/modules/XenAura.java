@@ -1,8 +1,5 @@
 package forgefuck.team.xenobyte.modules;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import forgefuck.team.xenobyte.api.config.Cfg;
 import forgefuck.team.xenobyte.api.gui.InputType;
 import forgefuck.team.xenobyte.api.module.Category;
@@ -19,6 +16,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.network.play.client.C02PacketUseEntity;
 import net.minecraft.network.play.client.C02PacketUseEntity.Action;
 import net.minecraft.network.play.client.C03PacketPlayer.C04PacketPlayerPosition;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class XenAura extends CheatModule {
 
@@ -82,8 +82,8 @@ public class XenAura extends CheatModule {
 					.filter(e -> (players && utils.isPlayer(e) && !friendsList.contains(e.getCommandSenderName()))
 							|| (monsters && utils.isMonster(e)) || (animals && utils.isAnimal(e))
 							|| (customnpc && utils.isCustom(e)) || (villagers && utils.isVillager(e)))
-					.filter(e -> ignoreWalls ? true : utils.player().canEntityBeSeen(e))
-					.filter(e -> pointed ? e == utils.pointedEntity() : true).forEach(this::attack);
+					.filter(e -> ignoreWalls || utils.player().canEntityBeSeen(e))
+					.filter(e -> !pointed || e == utils.pointedEntity()).forEach(this::attack);
 		}
 	}
 

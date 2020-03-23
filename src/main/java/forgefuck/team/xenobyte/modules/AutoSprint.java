@@ -6,20 +6,20 @@ import forgefuck.team.xenobyte.api.module.PerformMode;
 
 public class AutoSprint extends CheatModule {
 
-	public AutoSprint() {
-		super("AutoSprint", Category.MOVE, PerformMode.TOGGLE);
-	}
+    public AutoSprint() {
+        super("AutoSprint", Category.MOVE, PerformMode.TOGGLE);
+    }
 
-	@Override
-	public void onTick(boolean inGame) {
-		if (inGame) {
-			utils.player().setSprinting(true);
-		}
-	}
+    @Override
+    public void onTick(boolean inGame) {
+        if (inGame) {
+            utils.player().setSprinting(true);
+        }
+    }
 
-	@Override
-	public String moduleDesc() {
-		return "Постоянный спринт";
-	}
+    @Override
+    public String moduleDesc() {
+        return "Постоянный спринт";
+    }
 
 }

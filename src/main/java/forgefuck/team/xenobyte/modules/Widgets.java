@@ -1,13 +1,5 @@
 package forgefuck.team.xenobyte.modules;
 
-import java.util.ConcurrentModificationException;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.stream.Collectors;
-
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import forgefuck.team.xenobyte.api.config.Cfg;
 import forgefuck.team.xenobyte.api.gui.ElementAligment;
@@ -23,6 +15,10 @@ import forgefuck.team.xenobyte.render.Colors;
 import forgefuck.team.xenobyte.render.GuiScaler;
 import forgefuck.team.xenobyte.utils.TickHelper;
 import net.minecraftforge.client.event.GuiScreenEvent.InitGuiEvent;
+
+import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.stream.Collectors;
 
 public class Widgets extends CheatModule {
 

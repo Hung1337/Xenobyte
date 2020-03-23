@@ -12,39 +12,39 @@ import net.minecraftforge.client.event.RenderLivingEvent;
 
 public class RenderControl extends CheatModule {
 
-	@Cfg("living")
-	private boolean living;
+    @Cfg("living")
+    private boolean living;
 
-	public RenderControl() {
-		super("RenderControl", Category.WORLD, PerformMode.TOGGLE);
-		living = true;
-	}
+    public RenderControl() {
+        super("RenderControl", Category.WORLD, PerformMode.TOGGLE);
+        living = true;
+    }
 
-	@SubscribeEvent
-	public void worldRender(RenderLivingEvent.Pre e) {
-		if (!living && !(e.entity instanceof EntityPlayer)) {
-			e.setCanceled(true);
-		}
-	}
+    @SubscribeEvent
+    public void worldRender(RenderLivingEvent.Pre e) {
+        if (!living && !(e.entity instanceof EntityPlayer)) {
+            e.setCanceled(true);
+        }
+    }
 
-	@Override
-	public String moduleDesc() {
-		return "Включение рендера объектов в мире";
-	}
+    @Override
+    public String moduleDesc() {
+        return "Включение рендера объектов в мире";
+    }
 
-	@Override
-	public Panel settingPanel() {
-		return new Panel(new Button("LivingBase", living) {
-			@Override
-			public void onLeftClick() {
-				buttonValue(living = !living);
-			}
+    @Override
+    public Panel settingPanel() {
+        return new Panel(new Button("LivingBase", living) {
+            @Override
+            public void onLeftClick() {
+                buttonValue(living = !living);
+            }
 
-			@Override
-			public String elementDesc() {
-				return "Рендер живности";
-			}
-		});
-	}
+            @Override
+            public String elementDesc() {
+                return "Рендер живности";
+            }
+        });
+    }
 
 }

@@ -60,7 +60,7 @@ public class XenoFly extends CheatModule {
 			}
 			float sin = MathHelper.sin(pl.rotationYaw * (float) Math.PI / 180.0F);
 			float cos = MathHelper.cos(pl.rotationYaw * (float) Math.PI / 180.0F);
-			if (inGui ? true : utils.isInGameGui()) {
+			if (inGui || utils.isInGameGui()) {
 				pl.motionX = xm * cos - zm * sin;
 				pl.motionY = ym;
 				pl.motionZ = zm * cos + xm * sin;

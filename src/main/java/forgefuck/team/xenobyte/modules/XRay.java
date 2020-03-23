@@ -1,9 +1,5 @@
 package forgefuck.team.xenobyte.modules;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import forgefuck.team.xenobyte.api.config.Cfg;
 import forgefuck.team.xenobyte.api.module.Category;
@@ -17,9 +13,12 @@ import forgefuck.team.xenobyte.utils.TickHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockAir;
 import net.minecraft.block.BlockDirt;
-import net.minecraft.block.BlockStone;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class XRay extends CheatModule {
 

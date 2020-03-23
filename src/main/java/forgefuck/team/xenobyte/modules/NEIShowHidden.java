@@ -10,25 +10,25 @@ import net.minecraftforge.client.event.GuiOpenEvent;
 
 public class NEIShowHidden extends CheatModule {
 
-	public NEIShowHidden() {
-		super("NEIShowHidden", Category.NONE, PerformMode.ON_START);
-	}
+    public NEIShowHidden() {
+        super("NEIShowHidden", Category.NONE, PerformMode.ON_START);
+    }
 
-	@Override
-	public boolean isWorking() {
-		return NEI.isAvailable();
-	}
+    @Override
+    public boolean isWorking() {
+        return NEI.isAvailable();
+    }
 
-	@Override
-	public boolean provideStateEvents() {
-		return false;
-	}
+    @Override
+    public boolean provideStateEvents() {
+        return false;
+    }
 
-	@SubscribeEvent
-	public void guiOpen(GuiOpenEvent e) {
-		if (e.gui instanceof GuiContainer) {
-			NEI.clearHiddenItems();
-		}
-	}
+    @SubscribeEvent
+    public void guiOpen(GuiOpenEvent e) {
+        if (e.gui instanceof GuiContainer) {
+            NEI.clearHiddenItems();
+        }
+    }
 
 }

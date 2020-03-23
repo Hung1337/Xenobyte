@@ -23,7 +23,7 @@ public class BiblioFrameGive extends CheatModule {
 		TileEntity checkTile = utils.tile();
 		try {
 			if (Class.forName("jds.bibliocraft.tileentities.TileEntityMapFrame").isInstance(checkTile)) {
-				coords = new int[] { checkTile.xCoord, checkTile.yCoord, checkTile.zCoord };
+				coords = new int[]{checkTile.xCoord, checkTile.yCoord, checkTile.zCoord};
 				widgetMessage(String.format("блок карты сохранён по координатам [%s, %s, %s]", coords[0], coords[1],
 						coords[2]), WidgetMode.INFO);
 			} else if (coords != null) {

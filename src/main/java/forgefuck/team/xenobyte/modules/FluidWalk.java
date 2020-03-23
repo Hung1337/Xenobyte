@@ -1,11 +1,10 @@
 package forgefuck.team.xenobyte.modules;
 
-import org.lwjgl.input.Keyboard;
-
 import forgefuck.team.xenobyte.api.module.Category;
 import forgefuck.team.xenobyte.api.module.CheatModule;
 import forgefuck.team.xenobyte.api.module.PerformMode;
 import net.minecraft.block.BlockLiquid;
+import org.lwjgl.input.Keyboard;
 
 public class FluidWalk extends CheatModule {
 

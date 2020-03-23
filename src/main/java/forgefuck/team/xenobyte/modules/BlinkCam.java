@@ -36,10 +36,7 @@ public class BlinkCam extends CheatModule {
 
 	@Override
 	public boolean doSendPacket(Packet packet) {
-		if (packet instanceof C03PacketPlayer) {
-			return false;
-		}
-		return true;
+		return !(packet instanceof C03PacketPlayer);
 	}
 
 	@Override

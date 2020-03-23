@@ -1,10 +1,10 @@
 package forgefuck.team.xenobyte.modules;
 
 import cpw.mods.fml.common.Loader;
-import forgefuck.team.xenobyte.api.module.PerformMode;
-import forgefuck.team.xenobyte.api.module.PerformSource;
 import forgefuck.team.xenobyte.api.module.Category;
 import forgefuck.team.xenobyte.api.module.CheatModule;
+import forgefuck.team.xenobyte.api.module.PerformMode;
+import forgefuck.team.xenobyte.api.module.PerformSource;
 import forgefuck.team.xenobyte.utils.Rand;
 import net.minecraft.tileentity.TileEntity;
 
@@ -14,8 +14,8 @@ public class BiblioTableGive extends CheatModule {
 
 	public BiblioTableGive() {
 		super("BiblioTableGive", Category.MODS, PerformMode.SINGLE);
-		mcbNames = new String[] { "book", "map", "journal", "plan", "thaumonomicon", "necronomicon", "lexicon", "print",
-				"notes", "spell", "library", "tome", "encyclopedia" };
+		mcbNames = new String[]{"book", "map", "journal", "plan", "thaumonomicon", "necronomicon", "lexicon", "print",
+				"notes", "spell", "library", "tome", "encyclopedia"};
 	}
 
 	@Override

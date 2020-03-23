@@ -23,9 +23,9 @@ public class Spider extends CheatModule {
 	public void onTick(boolean inGame) {
 		if (inGame && utils.player().isCollidedHorizontally
 				&& (Keys.isPressed(utils.mc().gameSettings.keyBindForward)
-						|| Keys.isPressed(utils.mc().gameSettings.keyBindBack)
-						|| Keys.isPressed(utils.mc().gameSettings.keyBindLeft)
-						|| Keys.isPressed(utils.mc().gameSettings.keyBindRight))) {
+				|| Keys.isPressed(utils.mc().gameSettings.keyBindBack)
+				|| Keys.isPressed(utils.mc().gameSettings.keyBindLeft)
+				|| Keys.isPressed(utils.mc().gameSettings.keyBindRight))) {
 			utils.player().motionY = vSpeed;
 			spiding = true;
 		} else if (inGame && spiding) {

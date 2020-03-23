@@ -1,19 +1,19 @@
 package forgefuck.team.xenobyte.modules;
 
+import cpw.mods.fml.common.Loader;
+import forgefuck.team.xenobyte.api.config.Cfg;
+import forgefuck.team.xenobyte.api.module.Category;
+import forgefuck.team.xenobyte.api.module.CheatModule;
+import forgefuck.team.xenobyte.api.module.PerformMode;
+import forgefuck.team.xenobyte.api.module.PerformSource;
+import forgefuck.team.xenobyte.gui.click.elements.Button;
+import forgefuck.team.xenobyte.gui.click.elements.Panel;
+import forgefuck.team.xenobyte.utils.Reflections;
+
 import java.lang.reflect.Field;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-
-import cpw.mods.fml.common.Loader;
-import forgefuck.team.xenobyte.api.config.Cfg;
-import forgefuck.team.xenobyte.api.module.PerformMode;
-import forgefuck.team.xenobyte.api.module.PerformSource;
-import forgefuck.team.xenobyte.api.module.Category;
-import forgefuck.team.xenobyte.api.module.CheatModule;
-import forgefuck.team.xenobyte.gui.click.elements.Button;
-import forgefuck.team.xenobyte.gui.click.elements.Panel;
-import forgefuck.team.xenobyte.utils.Reflections;
 
 public class ThaumResearch extends CheatModule {
 
@@ -40,7 +40,7 @@ public class ThaumResearch extends CheatModule {
 			theResearch.setAccessible(true);
 			((List) theResearch.get(
 					Class.forName("thaumcraft.client.lib.ClientTickEventsFML").getField("researchPopup").get(null)))
-							.clear();
+					.clear();
 			LinkedHashMap<String, Object> researchCategories = (LinkedHashMap<String, Object>) Reflections
 					.findField(Class.forName("thaumcraft.api.research.ResearchCategories"), "researchCategories")
 					.get(null);

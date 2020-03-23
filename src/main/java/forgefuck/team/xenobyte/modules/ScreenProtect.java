@@ -1,9 +1,5 @@
 package forgefuck.team.xenobyte.modules;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import cpw.mods.fml.common.network.internal.FMLProxyPacket;
 import forgefuck.team.xenobyte.api.config.Cfg;
 import forgefuck.team.xenobyte.api.gui.InputType;
@@ -17,6 +13,10 @@ import forgefuck.team.xenobyte.gui.click.elements.ScrollSlider;
 import forgefuck.team.xenobyte.gui.swing.UserInput;
 import forgefuck.team.xenobyte.handlers.ModuleHandler;
 import net.minecraft.network.Packet;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ScreenProtect extends CheatModule {
 

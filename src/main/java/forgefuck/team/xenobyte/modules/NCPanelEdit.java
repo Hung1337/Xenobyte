@@ -1,7 +1,5 @@
 package forgefuck.team.xenobyte.modules;
 
-import java.util.Map;
-
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import forgefuck.team.xenobyte.api.module.Category;
@@ -11,6 +9,8 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.client.event.MouseEvent;
+
+import java.util.Map;
 
 public class NCPanelEdit extends CheatModule {
 

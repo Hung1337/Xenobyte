@@ -63,7 +63,7 @@ public class GiveSelect extends CheatModule {
 						WidgetMode.INFO);
 			} else if (utils.isInGameGui()) {
 				NBTTagCompound outTag = new NBTTagCompound();
-				String outMessage = new String();
+				String outMessage = "";
 				TileEntity tile = Xeno.utils.tile();
 				Entity entity = Xeno.utils.entity();
 				ItemStack item = Xeno.utils.item();

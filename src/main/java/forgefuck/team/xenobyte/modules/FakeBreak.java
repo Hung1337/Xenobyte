@@ -1,8 +1,5 @@
 package forgefuck.team.xenobyte.modules;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import forgefuck.team.xenobyte.api.config.Cfg;
 import forgefuck.team.xenobyte.api.module.Category;
@@ -16,6 +13,9 @@ import net.minecraft.block.BlockAir;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.client.event.MouseEvent;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FakeBreak extends CheatModule {
 

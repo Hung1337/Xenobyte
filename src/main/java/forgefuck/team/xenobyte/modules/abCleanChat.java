@@ -8,18 +8,18 @@ import net.minecraft.client.Minecraft;
 
 public class abCleanChat extends CheatModule {
 
-	public abCleanChat() {
-		super("ChatCleaner", Category.MISC, PerformMode.SINGLE);
-	}
+    public abCleanChat() {
+        super("ChatCleaner", Category.MISC, PerformMode.SINGLE);
+    }
 
-	@Override
-	public void onPerform(PerformSource src) {
-		Minecraft.getMinecraft().ingameGUI.getChatGUI().clearChatMessages();
-	}
+    @Override
+    public void onPerform(PerformSource src) {
+        Minecraft.getMinecraft().ingameGUI.getChatGUI().clearChatMessages();
+    }
 
-	@Override
-	public String moduleDesc() {
-		return "Чистка чата.";
-	}
+    @Override
+    public String moduleDesc() {
+        return "Чистка чата.";
+    }
 
 }
