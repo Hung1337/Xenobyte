@@ -1,8 +1,5 @@
 package forgefuck.team.xenobyte.handlers;
 
-import org.lwjgl.opengl.GL11;
-
-import cpw.mods.fml.common.eventhandler.Event.Result;
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent.ClientTickEvent;
@@ -15,14 +12,12 @@ import forgefuck.team.xenobyte.render.GuiScaler;
 import forgefuck.team.xenobyte.utils.Config;
 import forgefuck.team.xenobyte.utils.EventHelper;
 import forgefuck.team.xenobyte.utils.Keys;
-import forgefuck.team.xenobyte.utils.Utils;
 import net.minecraft.client.network.NetHandlerPlayClient;
 import net.minecraftforge.client.event.GuiScreenEvent.DrawScreenEvent;
 import net.minecraftforge.client.event.GuiScreenEvent.InitGuiEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent.Action;
+import org.lwjgl.opengl.GL11;
 
 public class EventHandler {
 
@@ -32,13 +27,6 @@ public class EventHandler {
 		handler.enabledModules().filter(CheatModule::provideForgeEvents).forEach(EventHelper::register);
 		EventHelper.register(this);
 	}
-
-//	@SubscribeEvent
-//	public void onInteract(PlayerInteractEvent e) {
-//		if(e.action == Action.RIGHT_CLICK_BLOCK) {
-//			Xeno.utils.serverChatMessage(Xeno.utils.block(e.x, e.y, e.z).getClass());
-//		}
-//	}
 	
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public void guiInit(InitGuiEvent.Pre e) {

@@ -1,7 +1,5 @@
 package forgefuck.team.xenobyte.modules;
 
-import java.io.IOException;
-
 import forgefuck.team.xenobyte.api.module.Category;
 import forgefuck.team.xenobyte.api.module.CheatModule;
 import forgefuck.team.xenobyte.api.module.PerformMode;
@@ -21,7 +19,7 @@ public class abCleanChat extends CheatModule {
 
 	@Override
 	public String moduleDesc() {
-		return "������ ����.";
+		return "Чистка чата.";
 	}
 
 }

@@ -1,96 +1,9 @@
 package forgefuck.team.xenobyte;
 
-import java.util.ArrayList;
-
 import forgefuck.team.xenobyte.api.module.CheatModule;
-import forgefuck.team.xenobyte.modules.AdvancedTooltip;
-import forgefuck.team.xenobyte.modules.AdvertHack;
-import forgefuck.team.xenobyte.modules.AntiKnockBack;
-import forgefuck.team.xenobyte.modules.AutoDrop;
-import forgefuck.team.xenobyte.modules.AutoSprint;
-import forgefuck.team.xenobyte.modules.BiblioAtlasGive;
-import forgefuck.team.xenobyte.modules.BiblioFrameGive;
-import forgefuck.team.xenobyte.modules.BiblioSignEdit;
-import forgefuck.team.xenobyte.modules.BiblioTableGive;
-import forgefuck.team.xenobyte.modules.BlinkCam;
-import forgefuck.team.xenobyte.modules.BlockOverlay;
-import forgefuck.team.xenobyte.modules.BuildMarkerGive;
-import forgefuck.team.xenobyte.modules.BunnyHop;
-import forgefuck.team.xenobyte.modules.CacheGive;
-import forgefuck.team.xenobyte.modules.CarpenterUse;
-import forgefuck.team.xenobyte.modules.Ceiling;
-import forgefuck.team.xenobyte.modules.ChatBind;
-import forgefuck.team.xenobyte.modules.CheckVanish;
-import forgefuck.team.xenobyte.modules.ClientSpeed;
-import forgefuck.team.xenobyte.modules.CmdTest;
-import forgefuck.team.xenobyte.modules.CrayfishGive;
-import forgefuck.team.xenobyte.modules.CrayfishNuker;
-import forgefuck.team.xenobyte.modules.CreativeGive;
-import forgefuck.team.xenobyte.modules.Credits;
-import forgefuck.team.xenobyte.modules.EIOTeleport;
-import forgefuck.team.xenobyte.modules.EIOXpGrab;
-import forgefuck.team.xenobyte.modules.Esp;
-import forgefuck.team.xenobyte.modules.ExtraFakeSlot;
-import forgefuck.team.xenobyte.modules.FactoryDupe;
-import forgefuck.team.xenobyte.modules.FactoryRocket;
-import forgefuck.team.xenobyte.modules.FakeBreak;
-import forgefuck.team.xenobyte.modules.FakeCreative;
-import forgefuck.team.xenobyte.modules.FakeItem;
-import forgefuck.team.xenobyte.modules.FastBreak;
-import forgefuck.team.xenobyte.modules.FastPlace;
-import forgefuck.team.xenobyte.modules.FluidWalk;
-import forgefuck.team.xenobyte.modules.FullBright;
-import forgefuck.team.xenobyte.modules.GalacticFire;
-import forgefuck.team.xenobyte.modules.GiveSelect;
-import forgefuck.team.xenobyte.modules.GuiReplacer;
-import forgefuck.team.xenobyte.modules.HiJump;
-import forgefuck.team.xenobyte.modules.MachineChaos;
-import forgefuck.team.xenobyte.modules.MalisisDoors;
-import forgefuck.team.xenobyte.modules.MatterGiveItem;
-import forgefuck.team.xenobyte.modules.MekFire;
-import forgefuck.team.xenobyte.modules.MekOpener;
-import forgefuck.team.xenobyte.modules.MsgSpammer;
-import forgefuck.team.xenobyte.modules.NCPanelEdit;
-import forgefuck.team.xenobyte.modules.NEIShowHidden;
-import forgefuck.team.xenobyte.modules.NanoTechGive;
-import forgefuck.team.xenobyte.modules.NoFall;
-import forgefuck.team.xenobyte.modules.NoRain;
-import forgefuck.team.xenobyte.modules.NoWeb;
-import forgefuck.team.xenobyte.modules.OCShutDown;
-import forgefuck.team.xenobyte.modules.OneWayTicket;
-import forgefuck.team.xenobyte.modules.OpenCreative;
-import forgefuck.team.xenobyte.modules.QuestGive;
-import forgefuck.team.xenobyte.modules.RFCellDupe;
-import forgefuck.team.xenobyte.modules.RadioHack;
-import forgefuck.team.xenobyte.modules.RedBarrelGive;
-import forgefuck.team.xenobyte.modules.RedGive;
-import forgefuck.team.xenobyte.modules.RenderControl;
-import forgefuck.team.xenobyte.modules.Rocket;
-import forgefuck.team.xenobyte.modules.ScreenProtect;
-import forgefuck.team.xenobyte.modules.Spider;
-import forgefuck.team.xenobyte.modules.Step;
-import forgefuck.team.xenobyte.modules.TainedAura;
-import forgefuck.team.xenobyte.modules.TextRadar;
-import forgefuck.team.xenobyte.modules.ThaumResearch;
-import forgefuck.team.xenobyte.modules.ThaumicFinger;
-import forgefuck.team.xenobyte.modules.ThaumicInvise;
-import forgefuck.team.xenobyte.modules.TinkerChest;
-import forgefuck.team.xenobyte.modules.TinkerGive;
-import forgefuck.team.xenobyte.modules.TinkerNoFall;
-import forgefuck.team.xenobyte.modules.TravellersGive;
-import forgefuck.team.xenobyte.modules.TurretNuker;
-import forgefuck.team.xenobyte.modules.VanilaNuker;
-import forgefuck.team.xenobyte.modules.VanillaMagic;
-import forgefuck.team.xenobyte.modules.WallHack;
-import forgefuck.team.xenobyte.modules.WayLine;
-import forgefuck.team.xenobyte.modules.Widgets;
-import forgefuck.team.xenobyte.modules.XRay;
-import forgefuck.team.xenobyte.modules.XRaySelect;
-import forgefuck.team.xenobyte.modules.XenAura;
-import forgefuck.team.xenobyte.modules.XenoFly;
-import forgefuck.team.xenobyte.modules.XenoGui;
-import forgefuck.team.xenobyte.modules.ZtonesMeta;
-import forgefuck.team.xenobyte.modules.abCleanChat;
+import forgefuck.team.xenobyte.modules.*;
+
+import java.util.ArrayList;
 
 public class ModulesList extends ArrayList<CheatModule> {
 
@@ -183,7 +96,7 @@ public class ModulesList extends ArrayList<CheatModule> {
 		add(new XRay());
 		add(new Esp());
 		add(new abCleanChat());
-//        add(new abTestModule());
+		add(new saveAss());
 	}
 
 }

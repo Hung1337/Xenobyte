@@ -1,8 +1,5 @@
 package forgefuck.team.xenobyte.modules;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import forgefuck.team.xenobyte.api.config.Cfg;
@@ -19,6 +16,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Esp extends CheatModule {
 
@@ -47,13 +47,12 @@ public class Esp extends CheatModule {
 	@Cfg("thaumaura")
 	private boolean thaumaura;
 	private List<EspObject> objects;
-	private double startLines[];
-	private boolean bobbing;
+	private double[] startLines;
 	private Utils utils = new Utils();
 
 	public Esp() {
 		super("Esp", Category.WORLD, PerformMode.TOGGLE);
-		objects = new ArrayList<EspObject>();
+		objects = new ArrayList<>();
 		startLines = new double[3];
 		bindLines = true;
 		players = true;
@@ -66,7 +65,7 @@ public class Esp extends CheatModule {
 	@Override
 	public void onTick(boolean inGame) {
 		if (inGame) {
-			List<EspObject> out = new ArrayList<EspObject>();
+			List<EspObject> out = new ArrayList<>();
 			utils.nearEntityes(radius).forEach(e -> {
 				if (players && utils.isPlayer(e)) {
 					out.add(new EspObject(e, 1, 0, 1));
